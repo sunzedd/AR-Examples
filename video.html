@@ -129,6 +129,8 @@ function initialize()
 	mesh1.rotation.x = -Math.PI/2;
 	
 	markerRoot1.add( mesh1 );
+
+	video.play();
 }
 
 
@@ -137,8 +139,6 @@ function update()
 	// update artoolkit on every frame
 	if ( arToolkitSource.ready !== false )
 		arToolkitContext.update( arToolkitSource.domElement );
-	let video = document.getElementById( 'video' );
-	video.play();
 }
 
 
