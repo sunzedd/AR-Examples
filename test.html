@@ -73,6 +73,7 @@
 
         // Add a video texture to the scene
         const video = document.createElement("video");
+	    video.setAttribute('crossorigin', '')
         video.src = "https://raw.githack.com/sunzedd/ncp-ar-demo-mindar/demo-logo/assets/nocashproduction2.webm";
         video.loop = true;
         video.load();
