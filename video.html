@@ -108,6 +108,13 @@ function initialize()
 	// setup markerRoots
 	////////////////////////////////////////////////////////////
 
+	        // Add a video texture to the scene
+	const video = document.createElement("video");
+    video.src = "https://raw.githack.com/sunzedd/ncp-ar-demo-mindar/demo-logo/assets/nocashproduction2.webm";
+    video.loop = true;
+    video.load();
+    video.play();
+
 	// build markerControls
 	markerRoot1 = new THREE.Group();
 	scene.add(markerRoot1);
@@ -117,7 +124,7 @@ function initialize()
 
 	let geometry1 = new THREE.PlaneBufferGeometry(2,2, 4,4);
 
-	let video = document.getElementById( 'video' );
+	// let video = document.getElementById( 'video' );
 	let texture = new THREE.VideoTexture( video );
 	texture.format = THREE.RGBAFormat;
 	let material1 = new THREE.MeshBasicMaterial( { map: texture } );
@@ -126,8 +133,6 @@ function initialize()
 	mesh1.rotation.x = -Math.PI/2;
 	
 	markerRoot1.add( mesh1 );
-
-	video.play();
 }
 
 
