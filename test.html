@@ -29,7 +29,7 @@
         const camera = new THREE.Camera();
         scene.add(camera);
 
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
@@ -67,10 +67,8 @@
 
         // Create an image marker that we can track in the camera view
         const markerControls = new THREEx.ArMarkerControls(arToolkitContext, camera, {
-            type: "image",
-            sourceUrl: "path/to/your/image.jpg",
-            resolution: "512",
-            changeMatrixMode: "cameraTransformMatrix"
+            type: "pattern",
+            patternUrl: "data/hiro.patt",
         });
 
         // Add a video texture to the scene
